@@ -53,22 +53,23 @@ class _State extends State<MyApp> {
         title: const Text('Name here'),
       ),
       body: Container(
-          padding: const EdgeInsets.all(32.0),
-          child: Center(
-            child: Column(
-              children: <Widget>[
-                const Text('Sales Data'),
-                //new Expanded(child: new charts.PieChart<Sales,int>( //old version
-                Expanded(
-                    child: charts.PieChart<dynamic>(
-                  //new version
-                  _chartdata,
-                  animate: true,
-                  animationDuration: const Duration(seconds: 3),
-                )),
-              ],
-            ),
-          )),
+        padding: const EdgeInsets.all(32.0),
+        child: Center(
+          child: Column(
+            children: <Widget>[
+              const Text('Sales Data'),
+              //new Expanded(child: new charts.PieChart<Sales,int>( //old version
+              Expanded(
+                  child: charts.PieChart(
+                //new version
+                _chartdata,
+                animate: true,
+                animationDuration: const Duration(seconds: 3),
+              )),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
